@@ -1,0 +1,13 @@
+.character {
+    padding: 1em;
+    text-align: center;
+    border: 2px solid black;
+    width: 30%;
+    height: auto;
+    display: inline-block;
+}
+
+.character > img {
+    width: 50%;
+    height: auto;
+}
