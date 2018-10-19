@@ -2,12 +2,49 @@
     padding: 1em;
     text-align: center;
     border: 2px solid black;
-    width: 30%;
     height: auto;
     display: inline-block;
 }
 
 .character > img {
-    width: 50%;
-    height: auto;
+    width: auto;
+    max-height: 50%;
+}
+
+#characters {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+#player-character {
+    margin-right: auto;
+    margin-left: auto;
+    display: inline-block;
+}
+
+#defenders {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+#fight {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#attack-stats {
+    display: none;
+}
+
+#defender-select {
+    display: none;
+}
+
+#opponent {
+    display: none;
 }

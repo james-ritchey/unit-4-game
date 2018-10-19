@@ -7,11 +7,12 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="assets/javascript/game.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
 
     <header>
-        <h1>Star Wars RPG</h1>
+        <h1>R6: Siege Arena</h1>
     </header>
 
 
@@ -19,20 +20,26 @@
         <div id="characters">
 
         </div>
-
-        <div id="player-character">
-            <h2>Your Character</h2>
+        <button type="button" id="select">Select Character</button>
+        <div id="fight">
+            <div id="player-character">
+                <h2>Your Character</h2>
+            </div>
+            <div id="attack-stats">
+                    <h2>Fight Section</h2>
+                    <button type="button" id="attack">Attack</button>
+            </div>
+            <div id="opponent">
+                <h2>Defender</h2>
+            </div>
         </div>
+
 
         <div id="defenders">
             <h2>Enemies Available To Attack</h2>
         </div>
+        <button type="button" id="defender-select">Choose Opponent</button>
 
-        <div id="fight">
-            <h2>Fight Section</h2>
-            <button type="button">Attack</button>
-            <h2>Defender</h2>
-        </div>
     </body>
 
 
