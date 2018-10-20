@@ -17,29 +17,32 @@
 
 
     <body>
-        <div id="characters">
+        <div class="container">   
+            <div id="characters">
 
-        </div>
-        <button type="button" id="select">Select Character</button>
-        <div id="fight">
-            <div id="player-character">
-                <h2>Your Character</h2>
             </div>
-            <div id="attack-stats">
-                    <h2>Fight Section</h2>
-                    <button type="button" id="attack">Attack</button>
+            <button type="button" id="select">Select Character</button>
+            <div id="fight">
+                <div id="player-character">
+                    <h2>Your Character</h2>
+                </div>
+                <div id="attack-stats">
+                        <h2>Fight Section</h2>
+                        <button type="button" id="attack">Attack</button>
+                        <p>You attacked for <span id="player-damage">0</span> damage.</p>
+                        <p><span id="opponent-name">Opponent</span> attacked for <span id="defender-damage">0</span> damage.</p>
+                </div>
+                <div id="opponent">
+                    <h2>Defender</h2>
+                </div>
             </div>
-            <div id="opponent">
-                <h2>Defender</h2>
+
+
+            <div id="defenders">
+                <h2>Enemies Available To Attack</h2>
             </div>
+            <button type="button" id="defender-select">Choose Opponent</button>
         </div>
-
-
-        <div id="defenders">
-            <h2>Enemies Available To Attack</h2>
-        </div>
-        <button type="button" id="defender-select">Choose Opponent</button>
-
     </body>
 
 
