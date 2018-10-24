@@ -151,11 +151,13 @@ var gameManager = {
     lose: function() {
         this.fighting = false;
         this.gameEnd = true;
+        $("#outcome").text("DEFEAT");
         console.log("o no");
     },
     
     win: function() {
         this.gameEnd = true;
+        $("#outcome").text("VICTORY");
         console.log("U won boi");
     }
 }

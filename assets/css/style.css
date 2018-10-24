@@ -48,7 +48,6 @@ button {
 }
 
 .character > img {
-    width: auto;
     max-height: 50%;
     padding: 0.2em;
 }
@@ -105,3 +104,4 @@ h2 {
     font-size: 800%;
     -webkit-text-stroke: 2px black;
 }
+
