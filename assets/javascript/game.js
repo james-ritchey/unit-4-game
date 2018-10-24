@@ -111,6 +111,7 @@ var gameManager = {
 
     chooseDefender: function() {
         this.fighting = true;
+        $("#opponent").css("display", "inline-block");
         $("#opponent").append(this.selectedCharacterDiv);
         $("#opponent-name").text(this.selectedCharacter.name);
     },
@@ -143,7 +144,7 @@ var gameManager = {
             this.win();
         }
         else {
-            $("#opponent").css("display", "inline-block");
+            $("#opponent").css("display", "none");
             $("#defender-select").css("display", "inline");
         }
     },
