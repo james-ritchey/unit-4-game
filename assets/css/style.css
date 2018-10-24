@@ -1,28 +1,61 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-size: 100vw;
+}
+
 .container {
-    width: 80%;
+    width: 85%;
     margin-right: auto;
     margin-left: auto;
     padding: 1em;
     height: auto;
+    font-family: 'Russo One', sans-serif;
+    background: #1a1a1a;
+    opacity: 0.8;
+    min-height: calc(100vh - 200px);
+    color: #ffffff;
 }
 
 header {
     text-align: center;
     font-size: 300%;
-    font-weight: bolder;
+    font-family: 'Black Ops One', cursive;
+    padding-top: 0.3em;
+    margin-bottom: 0.3em;
+    color: #ffffff;
+    -webkit-text-stroke: 1px black;
+
 }
 
 .character {
+    opacity: 1;
     padding: 1em;
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid #ffffff;
     height: auto;
     display: inline-block;
+    color: #ffffff;
+    background: #414141;
+}
+
+button {
+    font-family: 'Russo One', sans-serif;
+    border: 3px solid #ffffff;
+    padding: 0.25em;
+    margin: 0.5em;
+    color: #ffffff;
+    background: none;
 }
 
 .character > img {
     width: auto;
     max-height: 50%;
+    padding: 0.2em;
+}
+
+h2 {
+    font-size: 110%;
+    padding: 0.2em;
 }
 
 #characters {
@@ -34,13 +67,13 @@ header {
 #player-character {
     margin-right: auto;
     margin-left: auto;
-    display: inline-block;
+    display: none;
 }
 
 #defenders {
     margin-right: auto;
     margin-left: auto;
-    display: block;
+    display: none;
 }
 
 #fight {
@@ -57,4 +90,18 @@ header {
 
 #opponent {
     display: none;
+}
+
+#outcome {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    top: -200px;
+    text-align: center;
+    text-shadow: 4px 4px 4px #000000;
+    z-index: 1;
+    font-family: 'Black Ops One', cursive;
+    color: #ffffff;
+    font-size: 800%;
+    -webkit-text-stroke: 2px black;
 }

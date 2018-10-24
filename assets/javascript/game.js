@@ -4,32 +4,50 @@ $(document).ready(function() {
 var sledge = {
     name: "Sledge",
     image: "assets/images/sledge.png",
-    health: 100,
-    baseAP: 12,
-    attackPower: 12,
+    health: 120,
+    baseAP: 16,
+    attackPower: 16,
     counterAP: 12,
 }
 
 var ash = {
     name: "Ash",
     image: "assets/images/ash.png",
-    health: 137,
-    baseAP: 24,
-    attackPower: 24,
-    counterAP: 24,
+    health: 100,
+    baseAP: 20,
+    attackPower: 20,
+    counterAP: 16,
 }
 
 var blitz = {
     name: "Blitz",
-    image: "assets/images/ash.png",
+    image: "assets/images/blitz.png",
     health: 125,
     baseAP: 18,
     attackPower: 18,
-    counterAP: 18,
+    counterAP: 14,
+}
+
+var monty = {
+    name: "Monty",
+    image: "assets/images/monty.png",
+    health: 150,
+    baseAP: 15,
+    attackPower: 15,
+    counterAP: 10,
+}
+
+var fuze = {
+    name: "Fuze",
+    image: "assets/images/fuze.png",
+    health: 130,
+    baseAP: 15,
+    attackPower: 15,
+    counterAP: 13,
 }
 
 var gameManager = {
-    characters: [ash, sledge, blitz],
+    characters: [ash, sledge, blitz, fuze, monty],
     characterDivs: [],
     playerCharacter: null,
     playerCharacterDiv: null,
@@ -98,6 +116,8 @@ var gameManager = {
     },
 
     fight: function() {
+        $("#player-damage").text(this.playerCharacter.attackPower);
+        $("#defender-damage").text(this.selectedCharacter.counterAP);
         this.playerCharacter.health -= this.selectedCharacter.counterAP;
         this.selectedCharacter.health -= this.playerCharacter.attackPower;
         this.playerCharacter.attackPower += this.playerCharacter.baseAP;
@@ -105,12 +125,10 @@ var gameManager = {
         if(this.selectedCharacter.health < 0) {this.selectedCharacter.health = 0;}
         $("#" + this.selectedCharacter.name.toLowerCase() + "-health").text(this.selectedCharacter.health);
         $("#" + this.playerCharacter.name.toLowerCase() + "-health").text(this.playerCharacter.health);
-        $("#player-damage").text(this.playerCharacter.attackPower);
-        $("#defender-damage").text(this.selectedCharacter.counterAP);
         if(this.playerCharacter.health <= 0) {
             this.lose();
         }
-        if(this.selectedCharacter.health <= 0) {
+        else if(this.selectedCharacter.health <= 0) {
             this.defeatOpponent();
         }
     },
@@ -125,6 +143,7 @@ var gameManager = {
             this.win();
         }
         else {
+            $("#opponent").css("display", "inline-block");
             $("#defender-select").css("display", "inline");
         }
     },
@@ -149,11 +168,11 @@ $(".character").on("click", function() {
         gameManager.selectCharacter(this);
         if(!gameManager.fighting && !gameManager.gameEnd) {
             if(gameManager.playerCharacter === null) {
-                $(".character").css("border", "2px solid black");
+                $(".character").css("border", "2px solid #ffffff");
                 $(gameManager.selectedCharacterDiv).css("border", "4px solid green");
             }
             else{
-                $(".character").css("border", "2px solid black");
+                $(".character").css("border", "2px solid #ffffff");
                 $(gameManager.selectedCharacterDiv).css("border", "4px solid red");
             }
         }
@@ -164,7 +183,9 @@ $("button").on("click", function(){
         case "select":
             if(gameManager.selectedCharacter !== null) {
                 gameManager.choosePlayer();
-                $(".character").css("border", "2px solid black");
+                $("#player-character").css("display", "inline-block");
+                $("#defenders").css("display", "block");
+                $(".character").css("border", "2px solid #ffffff");
                 $("#select").css("display", "none");
                 $("#defender-select").css("display", "inline");
             }
@@ -173,7 +194,7 @@ $("button").on("click", function(){
         case "defender-select":
             if(gameManager.selectedCharacter !== null && !gameManager.gameEnd) {
                 gameManager.chooseDefender();
-                $(".character").css("border", "2px solid black");
+                $(".character").css("border", "2px solid #ffffff");
                 $("#defender-select").css("display", "none");
                 $("#attack-stats").css("display", "inline-block");
                 $("#opponent").css("display", "inline-block");

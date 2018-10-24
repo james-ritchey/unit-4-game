@@ -2,9 +2,10 @@
 <html lang="en-us">
     <head>
         <meta charset="UTF-8">
-        <title>StarWars RPG</title>
+        <title>R6: Siege Arena</title>
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Russo+One" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="assets/javascript/game.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,13 +18,15 @@
 
 
     <body>
-        <div class="container">   
-            <div id="characters">
+
+        <div class="container"> 
+            
+            <div id="characters" class="characters-div">
 
             </div>
             <button type="button" id="select">Select Character</button>
             <div id="fight">
-                <div id="player-character">
+                <div id="player-character" class="characters-div">
                     <h2>Your Character</h2>
                 </div>
                 <div id="attack-stats">
@@ -32,16 +35,19 @@
                         <p>You attacked for <span id="player-damage">0</span> damage.</p>
                         <p><span id="opponent-name">Opponent</span> attacked for <span id="defender-damage">0</span> damage.</p>
                 </div>
-                <div id="opponent">
+                <div id="opponent" class="character-div">
                     <h2>Defender</h2>
                 </div>
             </div>
+            <button type="button" id="defender-select">Choose Opponent</button>
 
-
-            <div id="defenders">
+            <div id="defenders" class="characters-div">
                 <h2>Enemies Available To Attack</h2>
             </div>
-            <button type="button" id="defender-select">Choose Opponent</button>
+             
+            <div id="outcome">
+                    WINNER
+                </div>  
         </div>
     </body>
 
